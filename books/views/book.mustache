@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Book List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>Book Details / Edit Book</h1>
+  <div class="row">
+    <div class="col-sm-8" style="background-color:lavender;">
+        {{#book}}
+                    <form method="POST" action="/books/update/{{id}}">
+                      <div class="form-group">
+                        <p>Book Title: {{title}}</p>
+                        <input type="text" class="form-control" id="edittitle" aria-describedby="titleHelp", value="{{title}}", name="title">
+                        <p>Book Author: {{author}}</p>
+                        <input type="text" class="form-control" id="editauthor" aria-describedby="authorHelp", value="{{author}}", name="author">
+                        <p>Book Num Pages: {{numPages}}</p>
+                        <input type="text" class="form-control" id="editnumPages" aria-describedby="numPagesHelp", value="{{numPages}}", name="numPages">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Edit Book</button>
+                      <a class="btn btn-primary" href="/">Home</a>
+                    </form>  
+        {{/book}}    
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>
